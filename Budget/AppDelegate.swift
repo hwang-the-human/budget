@@ -8,14 +8,20 @@
 
 import UIKit
 import CoreData
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    let launch = UserDefaults.standard.integer(forKey: "launch")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if launch >= 10 {
+            SKStoreReviewController.requestReview()
+            UserDefaults.standard.set(0, forKey: "launch")
+        } else {
+            UserDefaults.standard.set(launch + 1, forKey: "launch")
+        }
         return true
     }
 
