@@ -65,7 +65,6 @@ struct GraphView: View {
             filterTotalList(selectedType: selectedType, from: fromDate, to: toDate)
         }
         .frame(width: UIScreen.main.bounds.width)
-        .animation(.default)
     }
 }
 

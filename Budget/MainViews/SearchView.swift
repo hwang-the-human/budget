@@ -78,7 +78,6 @@ struct SearchView: View {
             }
         }
         .frame(width: UIScreen.main.bounds.width)
-        .animation(.default)
     }
     
 }
